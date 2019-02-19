@@ -34,18 +34,12 @@ def ident( matrix ):
 #m1 is of size 4 by 4
 def matrix_mult( m1, m2 ):
     for x in m2:
-
         temp = x[:]
-        #x = [0] * 4
-
-        x[0] = 0
-        x[1] = 0
-        x[2] = 0
-        x[3] = 0
         
         for i in range(4):
+            x[i] = 0
             for l in range(4):
-                x[i] += temp[l] * m1[i][l]
+                x[i] += temp[l] * m1[l][i]
 
 
 
@@ -56,3 +50,4 @@ def new_matrix(rows = 4, cols = 4):
         for r in range( rows ):
             m[c].append( 0 )
     return m
+
