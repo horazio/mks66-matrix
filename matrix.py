@@ -35,12 +35,11 @@ def ident( matrix ):
 def matrix_mult( m1, m2 ):
     for x in m2:
         temp = x[:]
-        
         for i in range(4):
             x[i] = 0
             for l in range(4):
                 x[i] += temp[l] * m1[l][i]
-
+            x[i] = int(x[i])
 
 
 def new_matrix(rows = 4, cols = 4):
